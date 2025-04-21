@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fines</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Book Manager</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="view-books.html">View Books</a></li>
+                <li><a href="add-book.html">Add Book</a></li>
+                <li><a href="fines.html">Fines</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Fines</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Book Title</th>
+                    <th>Due Date</th>
+                    <th>Fine Amount</th>
+                </tr>
+            </thead>
+            <tbody id="fines-table">
+            </tbody>
+        </table>
+    </main>
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchFines();
+        });
+
+        function fetchFines() {
+            api.getFines().then(fines => {
+                const table = document.getElementById('fines-table');
+                table.innerHTML = '';
+                fines.forEach(fine => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${fine.user_name}</td>
+                            <td>${fine.book_title}</td>
+                            <td>${fine.due_date}</td>
+                            <td>$${fine.fine_amount}</td>
+                        </tr>
+                    `;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
