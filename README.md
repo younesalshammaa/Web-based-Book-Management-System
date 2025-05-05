@@ -18,7 +18,7 @@ The system provides core functionalities for managing a book collection through 
 ## 💻 Technologies Used
 
 - **Front-End:** HTML, CSS, JavaScript  
-- **Back-End:** PHP, SQLite  
+- **Back-End:** PHP  
 - **Project Management:** JIRA  
 - **Testing:** Jest (Frontend), PHPUnit (Backend)  
 - **Design:** UML (Use Case, Class, Sequence diagrams)
@@ -39,7 +39,7 @@ The system provides core functionalities for managing a book collection through 
 Both frontend and backend testing were implemented to ensure functional accuracy.
 
 - Frontend tests using **Jest**  
-- Backend tests using **PHPUnit** with in-memory SQLite  
+- Backend tests using **PHPUnit** 
 - For full details, see: [`TESTING.md`](./TESTING.md)
 
 ---
